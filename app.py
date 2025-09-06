@@ -35,6 +35,7 @@ def register():
         cursor = mysql.connection.cursor()
         cursor.execute('SELECT * FROM users WHERE username = %s OR email = %s OR mobile = %s',
     (username, email, mobile))
+        account = cursor.fetchone()
 
 
         if account:
